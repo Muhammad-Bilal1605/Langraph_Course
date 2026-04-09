@@ -1,5 +1,5 @@
 import streamlit as st
-from scripts.chatbot_with_ui_and_streaming.with_streaming.backend import chatbot
+from scripts.chatbot_variants.c_with_resume_chat.backend import chatbot
 from langchain_core.messages import HumanMessage, AIMessageChunk
 # wo he wala hum nh config file set ki ha as we do for configuration for persistent memory and sth aik thread id attach kr di ha
 CONFIG = {'configurable': {'thread_id': 'thread-1'}}
