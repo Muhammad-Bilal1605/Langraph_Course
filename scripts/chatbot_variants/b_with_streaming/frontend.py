@@ -1,15 +1,11 @@
 import streamlit as st
 from scripts.chatbot_variants.b_with_streaming.backend import chatbot
 from langchain_core.messages import HumanMessage, AIMessageChunk
-# wo he wala hum nh config file set ki ha as we do for configuration for persistent memory and sth aik thread id attach kr di ha
+
 CONFIG = {'configurable': {'thread_id': 'thread-1'}}
 
-# st.session_data aik streamlit k andr library ha jo basically hamain allow krti ha k data aik session ka hum save kr skein
-#what we are doing here is k like ab ap aik message bhejogy phr dusra message and so on tu hr baar apki ye wali script shuru sh chlti ha
-#and session data store krnay ka b faida na hota as initialize shuru mai kr rhy thy message history ko tu wo empty ho jati
-#,,,jis ki wjh sh ap ka pichlay walay messages khtm ho jatay tu hum kia karaingy k k agr chat_messages mai koi message nhi tu hum
-#us session k liye aik dict bna laingy ,, is trh srf pehl dfa apki messages wali array initialize hogi, allowing you to keep previous msgs
 
+# Initialized array for message storage if first time running
 if 'message_history' not in st.session_state:
     st.session_state['message_history'] = []
 
